@@ -1,0 +1,19 @@
+<div class="xss">
+    <h2 class="xss-title"> XSS with angular sanitation</h2>
+    <div class="xss-form">
+        <label for="username">Username</label>
+        <input id="username" [(ngModel)]="username" placeholder="Username">
+    </div>
+    <div class="xss-output">
+        <div class="inline-flex">
+            <span> <b> interpolation : </b> </span> 
+            <pre>{{ username }} </pre>
+        </div>
+    
+        <div class="inline-flex">
+            <span> <b> attribute binding : </b> </span> 
+            <pre [innerHTML]="username"></pre>
+        </div>
+    </div>
+    
+</div>

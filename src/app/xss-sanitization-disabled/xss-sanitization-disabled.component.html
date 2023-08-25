@@ -1,0 +1,18 @@
+<div class="xss">
+    <h2 class="xss-title">XSS disabled sanitation</h2>
+    <div class="xss-form">
+        <label for="comment">Place your text </label>
+        <textarea id="comment" [(ngModel)]="comment" placeholder="Comment"></textarea>
+    </div>
+    <div class="xss-output">
+        <div class="inline-flex">
+            <span> <b> interpolation : </b> </span> 
+            <span>{{ comment }} </span>
+        </div>
+        <div class="inline-flex">
+            <span> <b> attribute binding : </b> </span> 
+            <span #xssDisabledSanitization [innerHTML]="comment | unsanitize: 'html'"></span>
+        </div>
+    </div>
+</div>
+

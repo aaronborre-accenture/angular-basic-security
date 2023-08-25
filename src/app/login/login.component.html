@@ -1,0 +1,7 @@
+<h1> Sample Login Form</h1>
+<form class="form-group" [formGroup]="form">
+    <input class="form-group-input" type="text" title="username" placeholder="Username" formControlName="username" >
+    <input class="form-group-input" type="password" title="password" placeholder="password" formControlName="password">
+    <span class="form-group-message" *ngIf="onError">{{onErrorMessage}}</span>
+    <button class="form-group-button" type="button" (click)="onLogin()">Submit</button>
+</form>

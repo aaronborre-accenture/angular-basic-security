@@ -1,0 +1,11 @@
+<div class="xss">
+    <h2 class="xss-title">XSS with DOM</h2>
+    <div class="xss-form">
+        <label for="comment">Place your text </label>
+        <textarea id="comment" [(ngModel)]="comment" placeholder="Comment"></textarea>
+        <button type="button" (click)="appendHTMLSnippetToDOM()">Submit</button>    
+    </div>
+
+    <span #element [innerHTML] = "comment "></span> 
+    <span>Interpolation : {{comment}}</span> 
+</div>
